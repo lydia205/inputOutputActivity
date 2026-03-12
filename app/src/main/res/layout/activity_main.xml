@@ -5,33 +5,37 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textAlignment="textStart"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/display txt "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533" />
+
+    <Button
+        android:id="@+id/clickButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="click me"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="625dp" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
         android:text="Name"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="75dp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="click me"
-        tools:layout_editor_absoluteX="189dp"
-        tools:layout_editor_absoluteY="623dp" />
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="55dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

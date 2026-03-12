@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "inputAndOutput"
 include(":app")
+include(":app")
  
