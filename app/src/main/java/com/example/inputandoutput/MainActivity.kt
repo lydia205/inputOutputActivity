@@ -2,6 +2,8 @@ package com.example.inputandoutput
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Switch
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -13,15 +15,52 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         // Get button using ID
-        val clickButton = findViewById<Button>(R.id.clickButton)
-        // code to button
-        clickButton?. setOnClickListener {
-        Toast.makeText(this@MainActivity, "Button clicked",
-        Toast.LENGTH_LONG).show()
+        val clickMeButton = findViewById<Button>(R.id.clickButton)
+
+        //add code to button
+        clickMeButton?.setOnClickListener {
+            Toast.makeText(this@MainActivity,
+                "Clicked Button", Toast.LENGTH_LONG).show()
         }
 
+
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+
+        //get the text view using ID
+        val welcomeTextView =
+            findViewById<TextView>(R.id.displayText)
+        val nameEditText = findViewById<TextView>(R.id.nameText)
+
+        // add code to the button that happens when its clicked
+        clickMeButton.setOnClickListener {
+            welcomeTextView.text = "Welcome, ${nameEditText}.text}!"
+
+        // get switch that turns on zulu greeting
+        val zuluSwitch = findViewById<Switch>(R.id.zuluswitch)
+
+        //add code to the switch
+        clickMeButton.setOnClickListener {
+            var greeting: String
+            var zulu :Boolean = zuluSwitch.isChecked
+            if (zulu) {
+                greeting = "Sawubona,${nameEditText.text}!"
+            } else {
+                if(nameEditText.text.toString()=="Sam"||
+                    nameEditText.text.toString()=="Samantha") {
+                    greeting = "Yo,${nameEditText.text}!"
+                }  else{
+                    greeting ="Greetings,${nameEditText.text}"
+
+                }
+            }
+
+            welcomeTextView.text =greeting
+
+            }
+
+        }
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.zuluSwitch)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
