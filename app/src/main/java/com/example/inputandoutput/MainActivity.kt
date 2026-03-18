@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         clickMeButton.setOnClickListener {
             var greeting: String
             var zulu :Boolean = zuluSwitch.isChecked
-            var age =18
+            var age = 18
             if (zulu) {
                 greeting = "Sawubona,${nameEditText.text}!"
             } else {
